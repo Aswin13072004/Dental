@@ -118,7 +118,7 @@ $result = $conn->query($sql);
                                     echo "</tr>";
                                 }
                             } else {
-                                echo "<tr><td colspan='11'>No appointments found.</td></tr>";
+                                echo "<tr><td colspan='11'>No Records found.</td></tr>";
                             }
                             ?>
                         </tbody>
