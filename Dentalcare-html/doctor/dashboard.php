@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'includes/dbconnection.php';
+require '../vendor/autoload.php'; // Include PHPMailer
 
 // Check if the user is logged in and is a doctor
 if (!isset($_SESSION['doctor_id'])) {
@@ -13,13 +14,49 @@ $doctor_name = $_SESSION['doctor_name']; // Assuming doctor's name is stored in 
 // Handle appointment acceptance
 if (isset($_GET['accept'])) {
     $appointment_id = (int)$_GET['accept'];
-    
-    // Update status and doctor_name in the patient table
-    $sql_update = "UPDATE patient SET status = 1, doctor_name = '$doctor_name' WHERE id = $appointment_id";
-    if ($conn->query($sql_update) === TRUE) {
-        $message = "Appointment accepted successfully!";
+
+    // Fetch patient details
+    $sql_patient = "SELECT * FROM patient WHERE id = $appointment_id";
+    $result_patient = $conn->query($sql_patient);
+    if ($result_patient->num_rows > 0) {
+        $patient = $result_patient->fetch_assoc();
+        $patient_email = $patient['email'];
+
+        // Update status and doctor_name in the patient table
+        $sql_update = "UPDATE patient SET status = 1, doctor_name = '$doctor_name' WHERE id = $appointment_id";
+        if ($conn->query($sql_update) === TRUE) {
+            // Send email to patient
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+            try {
+                // Server settings
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'your_email@gmail.com'; // Your Gmail address
+                $mail->Password = 'your_app_specific_password'; // Your Gmail app-specific password
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 587;
+
+                // Recipients
+                $mail->setFrom('your_email@gmail.com', 'SoftSmileDentalCentre');
+                $mail->addAddress($patient_email);
+
+                // Content
+                $mail->isHTML(true);
+                $mail->Subject = 'Appointment Accepted';
+                $mail->Body    = "Dear " . $patient['name'] . ",<br><br>Your appointment has been accepted by Dr. " . $doctor_name . ".<br><br>Best Regards,<br>SoftSmileDentalCentre";
+                $mail->AltBody = "Dear " . $patient['name'] . ",\n\nYour appointment has been accepted by Dr. " . $doctor_name . ".\n\nBest Regards,\nSoftSmileDentalCentre";
+
+                $mail->send();
+                $message = "Appointment accepted successfully and email sent to the patient!";
+            } catch (Exception $e) {
+                $message = "Appointment accepted but email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+        } else {
+            $message = "Error: " . $conn->error;
+        }
     } else {
-        $message = "Error: " . $conn->error;
+        $message = "Error: Patient not found.";
     }
 }
 
@@ -158,9 +195,6 @@ $result = $conn->query($sql);
     </script>
 </body>
 </html>
-
-
-
 
 <?php
 $conn->close();
