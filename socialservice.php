@@ -1,37 +1,8 @@
-<?php
-$success = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'doctor/includes/dbconnection.php';
-
-    $name = $conn->real_escape_string($_POST['form_name']);
-    $age = (int)$_POST['form_age'];
-    $email = $conn->real_escape_string($_POST['form_email']);
-    $phone_number = $conn->real_escape_string($_POST['form_phone']);
-    $alt_phone_number = $conn->real_escape_string($_POST['form_alt_phone']);
-    $appointment_date = $conn->real_escape_string($_POST['date']);
-    $appointment_time = $conn->real_escape_string($_POST['time']);
-    $issue = $conn->real_escape_string($_POST['issue']);
-    $message = $conn->real_escape_string($_POST['form_message']);
-
-    $sql = "INSERT INTO patient (name, age, email, phone_number, alt_phone_number, appointment_date, appointment_time, issue, message) 
-            VALUES ('$name', $age, '$email', '$phone_number', '$alt_phone_number', '$appointment_date', '$appointment_time', '$issue', '$message')";
-
-    if ($conn->query($sql) === TRUE) {
-        $success = true;
-    } else {
-        $error = $conn->error;
-    }
-
-    $conn->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Appointment</title>
+	<title>Social Service || Dental Care </title>
 
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,8 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="boxed_wrapper">
-  
-
+ 
 <!--Start Top bar area -->  
     <section class="top-bar-area">
         <div class="container">
@@ -103,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li ><a href="index.php">Home</a></li>
                                 <li ><a href="about.php">About Us</a></li>
                                 <!--<li><a href="appointment.php">Appointment</a></li> -->
-                                <li class="dropdown "><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
+                                <li class="dropdown current"><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
                                     <ul>
                                         <li><a href="Software.php">Common software</a></li>
                                         <li><a href="PhoneNumber.php">Common Phone Number-Toll free number</a></li>
@@ -139,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="ParaDentalCourse.php#fellow">Fellowship programmes</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="socialservice.php">Social <br class="NavbarBreakPoint">Services</a>
+                                <li class="dropdown current"><a href="socialservice.php">Social <br class="NavbarBreakPoint">Services</a>
                                     <ul>
                                         <li><a href="socialservice.php">Free treatments to the needy in clinics</a></li>
                                         <li><a href="socialservice.php#community">Free treatments at community level</a></li>
@@ -177,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="gallery-grid.php">Educational</a></li>-->
                                     </ul>
                                 </li>
-                                <li class="current"><a href="appointment.php">Appointment</a></li>
+                                <li><a href="appointment.php">Appointment</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -233,23 +203,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </header>  
-<!--End header area-->  
+<!--End header area--> 
+
+
 
 <!--Start breadcrumb area-->     
-<section class="breadcrumb-area" style="background-image: url(./images/Contact/ContactCropped.png);">
+<section class="breadcrumb-area" style="background-image: url(PageImages/SocialServices/SocialService1920230Cropped.png);">
+<!-- <section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);"> -->
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="left pull-left">
                     <div class="title">
-                        <h1>Appointment</h1>
+                        <h1>Free treatment to the needy in clinics</h1>
                     </div>
                 </div>
                 <div class="right pull-right">
                     <ul>
                         <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.php">Home</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Appointment</li>
+                        <li class="active">Social services</li>
                     </ul> 
                 </div>    
             </div>
@@ -258,231 +231,396 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 <!--End breadcrumb area-->  
 
-<!--Start appointment area-->
-<section class="appointment-page contact-area" style="color: black;">
-        <div class="container">
-            <div class="sec-title text-center">
-                <h1>Get an appointment</h1>
-                <span class="border"></span>
-                <div class="text-box">
-                    <p>Select your prefer specialist after select the dental service then, the calendar is going to<br> be enable to select your appointment.</p>
+<!--Start services page area-->
+<section class="services-page-area">
+    <div class="container">
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="PageImages/SocialServices/SocialService370230Cropped.png" alt="Awesome Image">
+                        <!-- <img src="images/services/1.jpg" alt="Awesome Image"> -->
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Screening Camps & lectures</p></li>
+                                        <li><p>Treatment Camps</p></li> -->
+                                        <!-- <li><p>Cultural Programmes</p></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="root-canel.php"><h3>Free  <br> treatments</h3></a>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="appointment-box" style="color: black ;">
-                    <div class="col-md-8">
-                        <div class="form">
-                            <form id="appointment-form" name="appointment-form" action="appointment.php" method="post" style="color: black;">
-                                <div class="row" style="color: black;">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_name" placeholder="Patients Name" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_age" placeholder="Patients age" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="email" name="form_email" placeholder="Email" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_phone" placeholder="Phone number" required="">
-                                        </div>
-                                    </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="PageImages/SocialServices/SocialService370230Cropped (1).png" alt="Awesome Image">
+                        <!-- <img src="images/services/2.jpg" alt="Awesome Image"> -->
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Cultural Programmes</p></li>
+                                        <li><p>Acticity based Programmes</p></li>
+                                        <li><p>Essay Writings on Dental Subjects</p></li> -->
+                                        
+                                    </ul>   
                                 </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_alt_phone" placeholder="Alternate phone Number" required="">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-
-                                            <input type="date" name="date" placeholder="Appointment Date" >
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="time" placeholder="Time">
-                                            <div class="icon-box">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <select class="selectmenu" name="issue">
-                                                <option selected="selected">Select the issue</option>
-                                                <option>Tooth Decay (Cavities)</option>
-                                                <option>Gum disease (Periodontal disease)</option>
-                                                <option>Tooth sensitivity</option>
-                                                <option>Tooth erosion</option>
-                                                <option>Tooth grinding</option>
-                                                <option>Cracked or Broken teeth</option>
-                                                <option>Tooth infection</option>
-                                                <option>Oral cancer</option>
-                                                <option>Misaligned tooth</option>
-                                                <option>Impacted teeth</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <textarea name="form_message" placeholder="Your Message.." required=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button class="thm-btn bg-1" type="submit">submit</button>   
-                                    </div>
-                                </div>
-                            </form>  
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="contact-info">
-                            <div class="title">
-                                <h2>Quick Contact</h2>
                             </div>
-                            <p>If you have any questions simply use the following contact details.</p>
-                            <ul class="contact-info-list">
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-pin"></span>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h5><span>Address:</span> Avadi,Chennai</h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-technology"></span>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h5><span>Phone:</span><a href="tel:+917823949383">78239 49383</a> &<br><a href="tel:044-26372500">044-26372500</a></h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-interface"></span>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h5><span>Email:</span> <a href="mailto:softsmiledentalcentre@ssdc.in">softsmiledentalcentre@ssdc.in</a> </h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-clock"></span>
-                                    </div>
-                                    <div class="text-holder" style="color: black;">
-                                        <h5><span>Opening Time:</span><br> Mon - Sat: 09.00am to 02.00pm <br> Sunday: Based on appointments </h5>
-                                    </div>
-                                </li>
-                            </ul>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-3"></span>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                    <div class="title-holder">
+                        <a href="clips-braces.php"><h3>Free <br> referrals</h3></a>
+                    </div>
+                </div>
             </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="PageImages/SocialServices/SocialService370230Cropped (2).png" alt="Awesome Image">
+                        <!-- <img src="images/services/3.jpg" alt="Awesome Image"> -->
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Sports & Games for college</p></li>
+                                        <li><p>Sponsorship & Partial sponsorship</p></li> -->
+                                    </ul>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="dental-implant.php"><h3>Free transportation if possible</h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="PageImages/SocialServices/SocialService370230Cropped (3).png" alt="Awesome Image">
+                        <!-- <img src="images/services/4.jpg" alt="Awesome Image"> -->
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Screening Camps and Lectures</p></li>
+                                        <li><p>Cultural Programmes</p></li> -->
+                                    </ul>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-9"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="tooth-jewellery.php"><h3>Free <br> food</h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
         </div>
-    </section>
+    </div>
 
-<!--End appointment area-->
+</section>
+<!--End services page area-->
 
-<!--Start about us area-->
-<section class="about-us-area choose-area">
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area"  id="community" style="background-image: url(./images/FreeTreatmentatCommunitylevel/FreeTreatmentAtCommunityLevel.png);">
     <div class="container">
-        <div class="sec-title text-center">
-            <h1>Why Choose Us</h1>
-            <span class="border"></span>
-        </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="right-content choose-carousel">
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-social"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Quality Doctors</h3>
-                            <p>"Trust your smile to the hands of quality dental experts. Experience the difference with our skilled team!"</p>
-                        </div>
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Free treatments at community level</h1>
                     </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-edit"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Free Checkup</h3>
-                            <p>"Don't let finances stand in the way of your oral health. Take advantage of our free dental check-up offer today!"</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-book"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Affordable Clinic</h3>
-                            <p>"Quality dental care at prices you can afford. Visit our clinic for budget-friendly treatments without compromising on excellence."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-tool"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Latest Technology</h3>
-                            <p>"Step into the future of dentistry at our clinic, where we harness the power of the latest technology to provide you with the most advanced care possible."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.php">Home</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Social services</li>
+                    </ul> 
                 </div>    
-            </div>  
+            </div>
         </div>
     </div>
 </section>
-<!--End about us area-->  
+<!--End breadcrumb area--> 
 
-
-
-<!--Start Google map area-->
-<section class="google-map-area">
-    <!-- <div 
-        class="google-map" 
-        id="contact-google-map" 
-        data-map-lat="44.529688" 
-        data-map-lng="-72.933009" 
-        data-icon-path="images/resources/map-marker.png" 
-        data-map-title="Brooklyn, New York, United Kingdom" 
-        data-map-zoom="12" 
-        data-markers='{
-            "marker-1": [44.529688, -72.933009, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"],
-            "marker-2": [44.231172, -76.485954, "<h4>Branch Office</h4><p>4/99 Alabama, USA</p>"]
-        }'>
-
-    </div> -->
-    <div style="display: flex; align-items: center;justify-content: center; padding: 55px ;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62168.98988206905!2d80.04376513525236!3d13.126918972623086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263682601dd29%3A0x7ef76b7a6755a950!2sSoft%20Smile%20Dental%20Cetre!5e0!3m2!1sen!2sin!4v1714655506162!5m2!1sen!2sin" width="1114" height="366" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!--Start services page area-->
+<section class="services-page-area">
+    <div class="container">
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/FreeTreatmentatCommunitylevel/1.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Lectures & power point presentation</p></li>
+                                        <li><p>Encouraging case presentation  poster presentation </p></li>
+                                        <li><p>Common posters and pamphlets </p></li> -->
+                                        <!-- <li><p>Cultural Programmes</p></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="root-canel.php"><h3>Screening camps </h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/FreeTreatmentatCommunitylevel/2.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Attaching clinics under one umbrella for better awareness quidelines & mutual cooperation</p></li>
+                                        <li><p>Encouraging usage of clinical softwares for all clinics</p></li>
+                                        <li><p>Encourage usage of  of our special Check up module lower costs</p></li> -->
+                                        
+                                    </ul>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-3"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="clips-braces.php"><h3>Treatment camps</h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/FreeTreatmentatCommunitylevel/3.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>To conduct camps & cultural programmes</p></li>
+                                        <li><p>To distribute pamphlets </p></li>
+                                        <li><p>To follow check up module </p></li> -->
+                                    </ul>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="dental-implant.php"><h3>Camps on request </h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-3">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/FreeTreatmentatCommunitylevel/4.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>To conduct camps & cultural programmes</p></li>
+                                        <li><p>To distribute pamphlets </p></li>
+                                        <li><p>To follow check up module </p></li> -->
+                                    </ul>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="dental-implant.php"><h3>Voluntary screening & treatment camps </h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
         </div>
-</section>
+    </div>
 
-<!--End Google map area-->     
+</section>
+<!--End services page area-->
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area"  id="volunteer" style="background-image: url(./images/volunteeprogram/VolunteerProgramCropped.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Volunteer Programme</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.php">Home</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Social services</li>
+                    </ul> 
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area--> 
+
+<!--Start services page area-->
+<section class="services-page-area">
+    <div class="container">
+        <div class="row">
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/volunteeprogram/EncouragingPeopleCropped.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Lectures & power point presentation</p></li>
+                                        <li><p>Encouraging case presentation  poster presentation </p></li>
+                                        <li><p>Common posters and pamphlets </p></li> -->
+                                        <!-- <li><p>Cultural Programmes</p></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="root-canel.php"><h3>Encouraging people to join as a volunteers </h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/volunteeprogram/Part_FullTimeVolunteersCropped.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>Attaching clinics under one umbrella for better awareness quidelines & mutual cooperation</p></li>
+                                        <li><p>Encouraging usage of clinical softwares for all clinics</p></li>
+                                        <li><p>Encourage usage of  of our special Check up module lower costs</p></li> -->
+                                        
+                                    </ul>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-3"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="clips-braces.php"><h3>Part time / full time volunteers</h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+            <!--Start single item-->
+            <div class="col-md-4">
+                <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                    <div class="img-holder">
+                        <img src="./images/volunteeprogram/VolunteerAdviseCropped.png" alt="Awesome Image">
+                        <div class="overlay-style-one">
+                            <div class="box">
+                                <div class="content">
+                                    <ul>
+                                        <!-- <li><p>To conduct camps & cultural programmes</p></li>
+                                        <li><p>To distribute pamphlets </p></li>
+                                        <li><p>To follow check up module </p></li> -->
+                                    </ul>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon">
+                                <span class="flaticon-medical-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <a href="dental-implant.php"><h3>Volunteer advisors</h3></a>
+                    </div>
+                </div>
+            </div>
+            <!--End single item-->
+        </div>
+    </div>
+
+</section>
+<!--End services page area-->
 
 
 <!--Start footer area-->  
@@ -650,7 +788,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
         </div>
     </div>
-</footer>     
+</footer>   
 <!--End footer area-->
 
 <!--Start footer bottom area--> 
@@ -667,7 +805,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>    
 </section> 
-<!--End footer bottom area-->
+<!--End footer bottom area-->  
+
 
 </div>
 <!--Scroll to top-->
@@ -732,18 +871,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 
-<!-- popup -->
-<script>
-        <?php if ($success): ?>
-            $(document).ready(function() {
-                alert('Appointment successfully booked!');
-            });
-        <?php endif; ?>
-    </script>
 
 
 
 
 
 </body>
-</html> 
+</html>  

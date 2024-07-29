@@ -1,37 +1,8 @@
-<?php
-$success = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'doctor/includes/dbconnection.php';
-
-    $name = $conn->real_escape_string($_POST['form_name']);
-    $age = (int)$_POST['form_age'];
-    $email = $conn->real_escape_string($_POST['form_email']);
-    $phone_number = $conn->real_escape_string($_POST['form_phone']);
-    $alt_phone_number = $conn->real_escape_string($_POST['form_alt_phone']);
-    $appointment_date = $conn->real_escape_string($_POST['date']);
-    $appointment_time = $conn->real_escape_string($_POST['time']);
-    $issue = $conn->real_escape_string($_POST['issue']);
-    $message = $conn->real_escape_string($_POST['form_message']);
-
-    $sql = "INSERT INTO patient (name, age, email, phone_number, alt_phone_number, appointment_date, appointment_time, issue, message) 
-            VALUES ('$name', $age, '$email', '$phone_number', '$alt_phone_number', '$appointment_date', '$appointment_time', '$issue', '$message')";
-
-    if ($conn->query($sql) === TRUE) {
-        $success = true;
-    } else {
-        $error = $conn->error;
-    }
-
-    $conn->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Appointment</title>
+	<title>Treatment & Procedures</title>
 
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="boxed_wrapper">
-  
+
 
 <!--Start Top bar area -->  
     <section class="top-bar-area">
@@ -103,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li ><a href="index.php">Home</a></li>
                                 <li ><a href="about.php">About Us</a></li>
                                 <!--<li><a href="appointment.php">Appointment</a></li> -->
-                                <li class="dropdown "><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
+                                <li class="dropdown current"><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
                                     <ul>
                                         <li><a href="Software.php">Common software</a></li>
                                         <li><a href="PhoneNumber.php">Common Phone Number-Toll free number</a></li>
@@ -122,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="AwerenessProgram.php#sponsorship">volunteer programmes</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown "><a href="TreatmentProcedure.php">Clinical</a>
+                                <li class="dropdown current"><a href="TreatmentProcedure.php">Clinical</a>
                                     <ul>
                                         <li><a href="TreatmentProcedure.php">Treatments & Procedures</a></li>
                                         <li><a href="PreventiveMeasure.php">Preventive measures</a></li>
@@ -177,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="gallery-grid.php">Educational</a></li>-->
                                     </ul>
                                 </li>
-                                <li class="current"><a href="appointment.php">Appointment</a></li>
+                                <li><a href="appointment.php">Appointment</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -233,24 +204,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </header>  
-<!--End header area-->  
+<!--End header area-->     
 
 <!--Start breadcrumb area-->     
-<section class="breadcrumb-area" style="background-image: url(./images/Contact/ContactCropped.png);">
+<section class="breadcrumb-area" style="background-image: url(PageImages/TreatmentsAndProcedures/dental\ treatment\ cropped.png);">
+<!-- <section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);"> -->
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="left pull-left">
                     <div class="title">
-                        <h1>Appointment</h1>
+                        <h1>Treatment & Procedures</h1>
                     </div>
                 </div>
                 <div class="right pull-right">
-                    <ul>
+                    <!--ul>
                         <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.php">Home</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Appointment</li>
-                    </ul> 
+                        <li><a href="#">Clinical</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Treatment & Procedures</li>
+                    </ul--> 
                 </div>    
             </div>
         </div>
@@ -258,118 +232,209 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 <!--End breadcrumb area-->  
 
-<!--Start appointment area-->
-<section class="appointment-page contact-area" style="color: black;">
-        <div class="container">
-            <div class="sec-title text-center">
-                <h1>Get an appointment</h1>
-                <span class="border"></span>
-                <div class="text-box">
-                    <p>Select your prefer specialist after select the dental service then, the calendar is going to<br> be enable to select your appointment.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="appointment-box" style="color: black ;">
-                    <div class="col-md-8">
-                        <div class="form">
-                            <form id="appointment-form" name="appointment-form" action="appointment.php" method="post" style="color: black;">
-                                <div class="row" style="color: black;">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_name" placeholder="Patients Name" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_age" placeholder="Patients age" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="email" name="form_email" placeholder="Email" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_phone" placeholder="Phone number" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_alt_phone" placeholder="Alternate phone Number" required="">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <div class="input-box">
+<!--Start services single area-->
+<!-- <section class="services-single-area">
+    <div class="container">
+        <div class="row">
+           
+        </div>
+    </div>
+</section> -->
+<!--End services single area-->
 
-                                            <input type="date" name="date" placeholder="Appointment Date" >
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="time" placeholder="Time">
-                                            <div class="icon-box">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <select class="selectmenu" name="issue">
-                                                <option selected="selected">Select the issue</option>
-                                                <option>Tooth Decay (Cavities)</option>
-                                                <option>Gum disease (Periodontal disease)</option>
-                                                <option>Tooth sensitivity</option>
-                                                <option>Tooth erosion</option>
-                                                <option>Tooth grinding</option>
-                                                <option>Cracked or Broken teeth</option>
-                                                <option>Tooth infection</option>
-                                                <option>Oral cancer</option>
-                                                <option>Misaligned tooth</option>
-                                                <option>Impacted teeth</option>
-                                            </select>
-                                        </div>
+<!--Start service single area-->
+<section id="service-single-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right"> 
+               
+                <div class="top-content-box">
+                    <div class="sec-title">
+                        <h1>Treatment & Procedures</h1>
+                        <span class="border"></span>
+                    </div>
+                    <div class="text-box" style="color: black; justify-content: space-between;">
+                        <p>➢ <b>Smile Design</b> – Smile make over & immediate make overs. 
+                            <br>➢<b> Orthodontics</b> – Braces/Clips to push in or align the teeth, Orthodontics is the branch of dentistry that corrects teeth and jaws that are positioned improperly. Crooked teeth and teeth that do not fit together correctly are harder to keep clean, are at risk of being lost early due to tooth decay and periodontal disease, and cause extra stress on the chewing muscles that can lead to headaches, TMJ syndrome and neck, shoulder and back pain. Teeth that are crooked or not in the right place can also detract from one's appearance. The benefits of orthodontic treatment include a healthier mouth, a more pleasing appearance, and teeth that are more likely to last a lifetime. A specialist in this field is called an orthodontist. Orthodontists receive two or more years of education beyond their four years in dental school in an ADA-approved orthodontic training program. <br>
+                            <br> <li>1. Fixed and removable appliances</li>
+                            <br><li>2. Invisible braces and regular braces.</li>
+                            <br>➢ <b>Endodontics </b>– RCT-Root Canal Treatments. Expert deals with decay of teech whihc extents into the pulp chamber. The most common procedure done in endodontics is root-canal therapy, which involves the removal of diseased pulp tissue. The aim of treatment is to remove infection caused by bacteria from inside the tooth. We use anesthesia to make the procedure pain-free. An opening is made on the top of the tooth. Then the pulp chamber and root canals are cleaned and shaped for filling and sealing. The permanent filling is followed by new crown. We use Lasers for sterilization of root canals. <br>
+                            <br>➢ <b>Conservative Dentistry</b> - Light Cure Resin Fillings
+                            <br> &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;&emsp; &emsp;&emsp;&emsp; Dowel Pin/Screws, Post & core build ups
+                            <br>➢ <b>Prosthodontics </b>– Artificial teeth-Denture, Dental Crowns
+                            A tooth cap or crown covers the tooth to restore its shape, size, funcation and strength. It is recommended to cap a root canal treated tooth to avoid fractures, it is placed on a Dental Implant, used to restore fractured tooth, for a smile makeover to improve appearance. Dental Bridges are used to replace one or more missing teeth by taking the support of the adjacent natural teeth. Putting a dental bridge avoids problems like rotation or shifting of adjacent teeth which results in disturbed bite, gum diseases, decay of adjacent teeth and supra eruption of opposite tooth. <br>    
+                            <br> &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;&emsp;  >> Fixed and removable dentures
+                            <br>&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;&emsp;  >> Ceramic Fixed Dentures(Both Metal & Metal free Fixed dentures)
+                            <br>&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;&emsp;   >> Unbreakable Flexible Removable Dentures
+                            Patient details clinical & personnel
+                            <br>➢<b> Oral And Facio maxillary Surgeries</b>
+                            
+                            <br>&emsp; &emsp; &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;➢ Minor surgeries-Wisdom tooth removal, operculectomy, Frenum removal
+                            <br>&emsp; &emsp; &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;➢ Major surgeries-Orthognathic surgery, Surgeries for jaw fractures.
+                            <br>➢ <b>Periodontics</b> – Gum treatments , Teeth cleaning/scaling, Deep cleaning, Flap surgery-gum surgery-Laser surgeries. Periodontal disease is a chronic condition that can never be cured, only controlled. Control of periodontal disease depends upon good, effective, and daily homecare, as well as regular profession care. Once treatment has been completed, a recommended schedule for regular cleanings (usually every three to four months) will be established. Often times these visits are alternated between the general dentist's office and the periodontal office. Innumerable studies have documented the importance of frequent and regular maintenance visits if you want to maintain your periodontal health. Protect your investment by scheduling and keeping regular periodontal maintenance visits. <br>
+                           
+                            <br>➢<b> Pedodontics</b> ֶ– Dental treatments for children , Concious sedation,Short GA DentalTreatments for children. We are dedicated to "approach all dental problems of children with affection and tender care.Ideally, your child's first dental visit should be before they have any dental problems. If you take your child to the dentist at an early age, your dentist can help you prevent any problems. We will check for decay and other problems, teach you how to clean your child's teeth daily and identify your child's fluoride needs. By starting dental visits early, you'll help your child build a lifetime of good dental habits.Sealants help preventing tooth decay (dental caries), the most common dental disease among children. Your dentist can help prevent or reduce the incidence of decay by applying them to your child’s teeth.A Sealant is a clear plastic material that, when applied to the chewing surface of a tooth, bonds into the grooves of the tooth to act as a barrier protecting the enamel from plaque and acids. It is applied to the back teeth (premolars and molars) where decay occurs most often. Sealant is most effective for children age 6 and older. <br>
+
+                           
+                    </div>
+                    <div class="img-box">
+                        <div class="row">
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <!-- <img src="images/services/service-single/v1-1.jpg" alt="Awesome Image"> -->
+                                        <img src="PageImages/TreatmentsAndProcedures/treatments and procedure cropped.png" alt="Awesome Image">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <textarea name="form_message" placeholder="Your Message.." required=""></textarea>
+                            </div>
+                            <!--End single item-->
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <img src="PageImages/TreatmentsAndProcedures/treatments and procedure cropped (3).png" alt="Awesome Image">
+                                        <!-- <img src="images/services/service-single/v1-2.jpg" alt="Awesome Image"> -->
                                     </div>
+                                    <!-- <h3>Before</h3> -->
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button class="thm-btn bg-1" type="submit">submit</button>   
-                                    </div>
+                            </div>
+                            <!--End single item-->
+                        </div>
+                    </div> 
+                </div>
+                
+                <!--div class="service-plan">
+                    <div class="sec-title">
+                        <h1>Types of Procedures</h1>
+                        <span class="border"></span>
+                    </div>
+                    <div class="row">
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-medical-6"></span>
                                 </div>
-                            </form>  
+                                <div class="text-box">
+                                    <h3>Professional</h3>
+                                    <p>How all this mistaken idea denoucing pleasure and praisings pain was born complete account expound.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-church"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>Laser Procedure</h3>
+                                    <p>There anyone who loves or pursues or to obtain pain of itself, because it is but because occasionally.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-avatar"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>At Home Procedure</h3>
+                                    <p>Undertakes laborious physical exercise, except to obtain some advantage from it but who has any right.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-medical-7"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>General Procedure</h3>
+                                    <p>Pursues or desires to obtain pain itself, because is pain, because occasionally circumstances occur procure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box>
+                    </div>
+                </div-->
+                
+                <!-- <div class="pricing-box">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-box">
+                                <h3>Pricing & Plans for Teeth Whitening</h3>
+                                <ul>
+                                    <li>Oral Consultation(Includes Full Mouth X-Ray & Treatment Plan) <span>Free</span></li>
+                                    <li>Exam & Cleaning (Includes Full Mouth Cleaning) <span>$120</span></li>
+                                    <li>White Filling(Includes One Composite Filling) <span>$175</span></li>
+                                    <li>Laser Teeth Whitening (Minimally Invasive Technology) <span>$340</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="contact-info">
-                            <div class="title">
-                                <h2>Quick Contact</h2>
-                            </div>
-                            <p>If you have any questions simply use the following contact details.</p>
-                            <ul class="contact-info-list">
+                </div>  -->
+                
+                
+               
+            </div> 
+            <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 pull-left">
+                <div class="service-sidebar">
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <ul class="all-service">
+                            <li class="active">
+                                <a href="TreatmentProcedure.php">Treatment & Procedures</a>
+                            </li>
+                            <li>
+                                <a href="PreventiveMeasure.php">Preventive Measures</a>
+                            </li>
+                            <li>
+                                <a href="HomeVisits.php">Home Visits</a>
+                            </li>
+                            <li>
+                                <a href="MobileClinics.php">Mobile Clinics</a>
+                            </li>
+                            <li>
+                                <a href="websiteseo.php">Website with SEO</a>
+                            </li>
+                            <li>
+                                <a href="SocialMedia.php">Social Media Engagements</a>
+                            </li>
+                        </ul> 
+                    </div> 
+                    <!--Ens single sidebar--> 
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Opening Hours</h3>
+                        </div>
+                        <ul class="opening-time">
+                            <li>Weekdays </li>
+                            <li>09.00am to 2.00pm</li>
+                            <li>04.30pm to 08.00pm</li>
+                        </ul>
+                    </div> 
+                    <!--Ens single sidebar--> 
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Quick Contact</h3>
+                        </div>
+                        <div class="contact-us">
+                            <ul class="contact-info">
                                 <li>
-                                    <div class="icon-holder">
+                                    <div class="icon-holder map">
                                         <span class="flaticon-pin"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5><span>Address:</span> Avadi,Chennai</h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-technology"></span>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h5><span>Phone:</span><a href="tel:+917823949383">78239 49383</a> &<br><a href="tel:044-26372500">044-26372500</a></h5>
+                                        <h5>Avadi, Chennai</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -377,115 +442,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5><span>Email:</span> <a href="mailto:softsmiledentalcentre@ssdc.in">softsmiledentalcentre@ssdc.in</a> </h5>
+                                        <h5>softsmiledentalcentre@ssdc.in</h5>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon-holder">
-                                        <span class="flaticon-clock"></span>
+                                        <span class="flaticon-technology-1"></span>
                                     </div>
-                                    <div class="text-holder" style="color: black;">
-                                        <h5><span>Opening Time:</span><br> Mon - Sat: 09.00am to 02.00pm <br> Sunday: Based on appointments </h5>
+                                    <div class="text-holder">
+                                        <h5>78239 49383</h5>
+                                    </div>
+                                    <div class="text-holder">
+                                        <h5>044-26372500</h5>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> 
+                    <!--Ens single sidebar-->       
                 </div>    
             </div>
-        </div>
-    </section>
-
-<!--End appointment area-->
-
-<!--Start about us area-->
-<section class="about-us-area choose-area">
-    <div class="container">
-        <div class="sec-title text-center">
-            <h1>Why Choose Us</h1>
-            <span class="border"></span>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="right-content choose-carousel">
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-social"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Quality Doctors</h3>
-                            <p>"Trust your smile to the hands of quality dental experts. Experience the difference with our skilled team!"</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-edit"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Free Checkup</h3>
-                            <p>"Don't let finances stand in the way of your oral health. Take advantage of our free dental check-up offer today!"</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-book"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Affordable Clinic</h3>
-                            <p>"Quality dental care at prices you can afford. Visit our clinic for budget-friendly treatments without compromising on excellence."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-tool"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Latest Technology</h3>
-                            <p>"Step into the future of dentistry at our clinic, where we harness the power of the latest technology to provide you with the most advanced care possible."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                </div>    
-            </div>  
+            
         </div>
     </div>
 </section>
-<!--End about us area-->  
-
-
-
-<!--Start Google map area-->
-<section class="google-map-area">
-    <!-- <div 
-        class="google-map" 
-        id="contact-google-map" 
-        data-map-lat="44.529688" 
-        data-map-lng="-72.933009" 
-        data-icon-path="images/resources/map-marker.png" 
-        data-map-title="Brooklyn, New York, United Kingdom" 
-        data-map-zoom="12" 
-        data-markers='{
-            "marker-1": [44.529688, -72.933009, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"],
-            "marker-2": [44.231172, -76.485954, "<h4>Branch Office</h4><p>4/99 Alabama, USA</p>"]
-        }'>
-
-    </div> -->
-    <div style="display: flex; align-items: center;justify-content: center; padding: 55px ;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62168.98988206905!2d80.04376513525236!3d13.126918972623086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263682601dd29%3A0x7ef76b7a6755a950!2sSoft%20Smile%20Dental%20Cetre!5e0!3m2!1sen!2sin!4v1714655506162!5m2!1sen!2sin" width="1114" height="366" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-</section>
-
-<!--End Google map area-->     
-
-
-<!--Start footer area-->  
+<!--End service Single area--> 
 
 <!--Start footer area-->  
 <footer class="footer-area">
@@ -650,7 +631,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
         </div>
     </div>
-</footer>     
+</footer>    
 <!--End footer area-->
 
 <!--Start footer bottom area--> 
@@ -667,7 +648,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>    
 </section> 
-<!--End footer bottom area-->
+<!--End footer bottom area-->  
+
 
 </div>
 <!--Scroll to top-->
@@ -732,18 +714,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 
-<!-- popup -->
-<script>
-        <?php if ($success): ?>
-            $(document).ready(function() {
-                alert('Appointment successfully booked!');
-            });
-        <?php endif; ?>
-    </script>
 
 
 
 
 
 </body>
-</html> 
+</html>  

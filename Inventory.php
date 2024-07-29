@@ -1,37 +1,8 @@
-<?php
-$success = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'doctor/includes/dbconnection.php';
-
-    $name = $conn->real_escape_string($_POST['form_name']);
-    $age = (int)$_POST['form_age'];
-    $email = $conn->real_escape_string($_POST['form_email']);
-    $phone_number = $conn->real_escape_string($_POST['form_phone']);
-    $alt_phone_number = $conn->real_escape_string($_POST['form_alt_phone']);
-    $appointment_date = $conn->real_escape_string($_POST['date']);
-    $appointment_time = $conn->real_escape_string($_POST['time']);
-    $issue = $conn->real_escape_string($_POST['issue']);
-    $message = $conn->real_escape_string($_POST['form_message']);
-
-    $sql = "INSERT INTO patient (name, age, email, phone_number, alt_phone_number, appointment_date, appointment_time, issue, message) 
-            VALUES ('$name', $age, '$email', '$phone_number', '$alt_phone_number', '$appointment_date', '$appointment_time', '$issue', '$message')";
-
-    if ($conn->query($sql) === TRUE) {
-        $success = true;
-    } else {
-        $error = $conn->error;
-    }
-
-    $conn->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Appointment</title>
+	<title>Common Inventory</title>
 
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="boxed_wrapper">
-  
+
 
 <!--Start Top bar area -->  
     <section class="top-bar-area">
@@ -103,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li ><a href="index.php">Home</a></li>
                                 <li ><a href="about.php">About Us</a></li>
                                 <!--<li><a href="appointment.php">Appointment</a></li> -->
-                                <li class="dropdown "><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
+                                <li class="dropdown current"><a href="DoctorName.php">Partner <br class="NavbarBreakPoint">clinics</a>
                                     <ul>
                                         <li><a href="Software.php">Common software</a></li>
                                         <li><a href="PhoneNumber.php">Common Phone Number-Toll free number</a></li>
@@ -122,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="AwerenessProgram.php#sponsorship">volunteer programmes</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown "><a href="TreatmentProcedure.php">Clinical</a>
+                                <li class="dropdown"><a href="TreatmentProcedure.php">Clinical</a>
                                     <ul>
                                         <li><a href="TreatmentProcedure.php">Treatments & Procedures</a></li>
                                         <li><a href="PreventiveMeasure.php">Preventive measures</a></li>
@@ -177,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <li><a href="gallery-grid.php">Educational</a></li>-->
                                     </ul>
                                 </li>
-                                <li class="current"><a href="appointment.php">Appointment</a></li>
+                                <li><a href="appointment.php">Appointment</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -233,23 +204,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </header>  
-<!--End header area-->  
+<!--End header area-->     
 
 <!--Start breadcrumb area-->     
-<section class="breadcrumb-area" style="background-image: url(./images/Contact/ContactCropped.png);">
+<section class="breadcrumb-area" style="background-image: url(./images/CommonInventory/CommonInventoryCrooped.png);">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="left pull-left">
                     <div class="title">
-                        <h1>Appointment</h1>
+                        <h1>Common Inventory</h1>
                     </div>
                 </div>
                 <div class="right pull-right">
                     <ul>
                         <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.php">Home</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Appointment</li>
+                        <li><a href="#">Partner Clinics</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Common Inventory</li>
                     </ul> 
                 </div>    
             </div>
@@ -258,118 +231,181 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 <!--End breadcrumb area-->  
 
-<!--Start appointment area-->
-<section class="appointment-page contact-area" style="color: black;">
-        <div class="container">
-            <div class="sec-title text-center">
-                <h1>Get an appointment</h1>
-                <span class="border"></span>
-                <div class="text-box">
-                    <p>Select your prefer specialist after select the dental service then, the calendar is going to<br> be enable to select your appointment.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="appointment-box" style="color: black ;">
-                    <div class="col-md-8">
-                        <div class="form">
-                            <form id="appointment-form" name="appointment-form" action="appointment.php" method="post" style="color: black;">
-                                <div class="row" style="color: black;">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_name" placeholder="Patients Name" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_age" placeholder="Patients age" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="email" name="form_email" placeholder="Email" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_phone" placeholder="Phone number" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="form_alt_phone" placeholder="Alternate phone Number" required="">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <div class="input-box">
 
-                                            <input type="date" name="date" placeholder="Appointment Date" >
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <input type="text" name="time" placeholder="Time">
-                                            <div class="icon-box">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-box">
-                                            <select class="selectmenu" name="issue">
-                                                <option selected="selected">Select the issue</option>
-                                                <option>Tooth Decay (Cavities)</option>
-                                                <option>Gum disease (Periodontal disease)</option>
-                                                <option>Tooth sensitivity</option>
-                                                <option>Tooth erosion</option>
-                                                <option>Tooth grinding</option>
-                                                <option>Cracked or Broken teeth</option>
-                                                <option>Tooth infection</option>
-                                                <option>Oral cancer</option>
-                                                <option>Misaligned tooth</option>
-                                                <option>Impacted teeth</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <textarea name="form_message" placeholder="Your Message.." required=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button class="thm-btn bg-1" type="submit">submit</button>   
-                                    </div>
-                                </div>
-                            </form>  
-                        </div>
+<!--Start service single area-->
+<section id="service-single-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right"> 
+               
+                <div class="top-content-box">
+                    <div class="sec-title">
+                        <h1>Common Inventory</h1>
+                        <span class="border"></span>
                     </div>
-                    <div class="col-md-4">
-                        <div class="contact-info">
-                            <div class="title">
-                                <h2>Quick Contact</h2>
+                    <div class="text-box">
+                        <p> Soft Smile Dental Centre maintains a comprehensive inventory of dental supplies and materials to support our commitment to providing top-quality dental care. Our inventory includes a wide range of products essential for various dental procedures and treatments, including:
+                            <br>
+                            <br><b>Restorative Materials:</b> We stock a variety of dental restorative materials, such as composite resins, amalgam, and glass ionomer cement, to repair damaged or decayed teeth and restore their function and aesthetics.
+                            <br> 
+                            <br><b>Sterilization and Infection Control:</b> Ensuring patient safety is our top priority. Our inventory includes sterilization equipment, disinfectants, and personal protective equipment to maintain a clean and hygienic environment and prevent the spread of infections.
+                            <br>
+                            <br><b>Prophylaxis and Hygiene:</b> We offer an array of prophylaxis and hygiene products, including toothbrushes, toothpaste, floss, and mouth rinses, to promote oral health and prevent dental diseases.
+                            <br>  
+                            <br><b>Orthodontic Supplies:</b> Whether you're undergoing orthodontic treatment or providing orthodontic care to your patients, we have a selection of orthodontic supplies, including brackets, wires, and orthodontic instruments, to meet your needs.
+                            <br>  
+                            <br><b>Implant Components:</b> For patients seeking dental implants, we provide implant components and accessories necessary for implant placement and restoration, ensuring successful outcomes and long-term stability.
+                            <br>
+                            For inquiries regarding our inventory supplies or to place an order, please contact our office:
+                            <br>
+                            <b>Soft Smile Dental Centre</b>
+                            <br>Phone: 78239 49383 , 044-26372500
+                            <br>Our team is dedicated to ensuring that our inventory is well-stocked with high-quality products to meet the needs of our patients and dental professionals. Trust Soft Smile Dental Centre for all your dental supply needs.
+                            
+                            </p>
+                    </div>
+                    <div class="img-box">
+                        <div class="row">
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <img src="./images/CommonInventory/10.png" alt="Awesome Image">
+                                    </div>
+                                </div>
                             </div>
-                            <p>If you have any questions simply use the following contact details.</p>
-                            <ul class="contact-info-list">
+                            <!--End single item-->
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <img src="./images/UpdatedImages/CroppedMouthWash.jpg" alt="Awesome Image">
+                                        <!-- <img src="./images/CommonInventory/11.png" alt="Awesome Image"> -->
+                                    </div>
+                                    <!-- <h3>Before</h3> -->
+                                </div>
+                            </div>
+                            <!--End single item-->
+                        </div>
+                    </div> 
+                </div>
+                
+                <!--div class="service-plan">
+                    <div class="sec-title">
+                        <h1>Types of Procedures</h1>
+                        <span class="border"></span>
+                    </div>
+                    <div class="row">
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-medical-6"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>Professional</h3>
+                                    <p>How all this mistaken idea denoucing pleasure and praisings pain was born complete account expound.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-church"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>Laser Procedure</h3>
+                                    <p>There anyone who loves or pursues or to obtain pain of itself, because it is but because occasionally.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-avatar"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>At Home Procedure</h3>
+                                    <p>Undertakes laborious physical exercise, except to obtain some advantage from it but who has any right.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box-->
+                        <!--Start single box>
+                        <div class="col-md-6">
+                            <div class="single-box">
+                                <div class="icon-holder">
+                                    <span class="flaticon-medical-7"></span>
+                                </div>
+                                <div class="text-box">
+                                    <h3>General Procedure</h3>
+                                    <p>Pursues or desires to obtain pain itself, because is pain, because occasionally circumstances occur procure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single box>
+                    </div>
+                </div-->
+                
+                
+                   
+            </div> 
+            <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 pull-left">
+                <div class="service-sidebar">
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <ul class="all-service">
+                           
+                            <li >
+                                <a href="Software.php">Common Software</a>
+                            </li>
+                            <li >
+                                <a href="PhoneNumber.php">Common Phone Number</a>
+                            </li>
+                            <li>
+                                <a href="Laboratory.php">Common Laboratory</a>
+                            </li>
+                            <li  class="active">
+                                <a href="Inventory.php">Common Inventory</a>
+                            </li>
+                            <li>
+                                <a href="SOP.php">Common SOP</a>
+                            </li>
+                            <li>
+                                <a href="Systems.php">Common Systems</a>
+                            </li>
+                        </ul> 
+                    </div> 
+                    <!--Ens single sidebar--> 
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Opening Hours</h3>
+                        </div>
+                          <ul class="opening-time">
+                            <li>Weekdays </li>
+                            <li>09.00am to 2.00pm</li>
+                            <li>04.30pm to 08.00pm</li>
+                        </ul>
+                    </div> 
+                    <!--Ens single sidebar--> 
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Quick Contact</h3>
+                        </div>
+                        <div class="contact-us">
+                            <ul class="contact-info">
                                 <li>
-                                    <div class="icon-holder">
+                                    <div class="icon-holder map">
                                         <span class="flaticon-pin"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5><span>Address:</span> Avadi,Chennai</h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon-holder">
-                                        <span class="flaticon-technology"></span>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h5><span>Phone:</span><a href="tel:+917823949383">78239 49383</a> &<br><a href="tel:044-26372500">044-26372500</a></h5>
+                                        <h5>Avadi,Chennai</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -377,115 +413,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5><span>Email:</span> <a href="mailto:softsmiledentalcentre@ssdc.in">softsmiledentalcentre@ssdc.in</a> </h5>
+                                        <h5>SupportDentalcare@gmail.com</h5>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon-holder">
-                                        <span class="flaticon-clock"></span>
+                                        <span class="flaticon-technology-1"></span>
                                     </div>
-                                    <div class="text-holder" style="color: black;">
-                                        <h5><span>Opening Time:</span><br> Mon - Sat: 09.00am to 02.00pm <br> Sunday: Based on appointments </h5>
+                                    <div class="text-holder">
+                                        <h5>78239 49383</h5>
+                                    </div>
+                                    <div class="text-holder">
+                                        <h5>044-26372500</h5>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> 
+                    <!--Ens single sidebar-->       
                 </div>    
             </div>
-        </div>
-    </section>
-
-<!--End appointment area-->
-
-<!--Start about us area-->
-<section class="about-us-area choose-area">
-    <div class="container">
-        <div class="sec-title text-center">
-            <h1>Why Choose Us</h1>
-            <span class="border"></span>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="right-content choose-carousel">
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-social"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Quality Doctors</h3>
-                            <p>"Trust your smile to the hands of quality dental experts. Experience the difference with our skilled team!"</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-edit"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Free Checkup</h3>
-                            <p>"Don't let finances stand in the way of your oral health. Take advantage of our free dental check-up offer today!"</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-book"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Affordable Clinic</h3>
-                            <p>"Quality dental care at prices you can afford. Visit our clinic for budget-friendly treatments without compromising on excellence."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item">
-                        <div class="icon-holder">
-                            <span class="flaticon-tool"></span>
-                        </div>
-                        <div class="text">
-                            <h3>Latest Technology</h3>
-                            <p>"Step into the future of dentistry at our clinic, where we harness the power of the latest technology to provide you with the most advanced care possible."</p>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                </div>    
-            </div>  
+            
         </div>
     </div>
 </section>
-<!--End about us area-->  
-
-
-
-<!--Start Google map area-->
-<section class="google-map-area">
-    <!-- <div 
-        class="google-map" 
-        id="contact-google-map" 
-        data-map-lat="44.529688" 
-        data-map-lng="-72.933009" 
-        data-icon-path="images/resources/map-marker.png" 
-        data-map-title="Brooklyn, New York, United Kingdom" 
-        data-map-zoom="12" 
-        data-markers='{
-            "marker-1": [44.529688, -72.933009, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"],
-            "marker-2": [44.231172, -76.485954, "<h4>Branch Office</h4><p>4/99 Alabama, USA</p>"]
-        }'>
-
-    </div> -->
-    <div style="display: flex; align-items: center;justify-content: center; padding: 55px ;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62168.98988206905!2d80.04376513525236!3d13.126918972623086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263682601dd29%3A0x7ef76b7a6755a950!2sSoft%20Smile%20Dental%20Cetre!5e0!3m2!1sen!2sin!4v1714655506162!5m2!1sen!2sin" width="1114" height="366" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-</section>
-
-<!--End Google map area-->     
-
-
-<!--Start footer area-->  
+<!--End service Single area--> 
 
 <!--Start footer area-->  
 <footer class="footer-area">
@@ -650,7 +602,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
         </div>
     </div>
-</footer>     
+</footer>   
 <!--End footer area-->
 
 <!--Start footer bottom area--> 
@@ -667,7 +619,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>    
 </section> 
-<!--End footer bottom area-->
+<!--End footer bottom area-->  
+ 
 
 </div>
 <!--Scroll to top-->
@@ -732,18 +685,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 
-<!-- popup -->
-<script>
-        <?php if ($success): ?>
-            $(document).ready(function() {
-                alert('Appointment successfully booked!');
-            });
-        <?php endif; ?>
-    </script>
 
 
 
 
 
 </body>
-</html> 
+</html>  
