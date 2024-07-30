@@ -10,6 +10,7 @@ if (!isset($_SESSION['doctor_id'])) {
 }
 
 $doctor_name = $_SESSION['doctor_name']; // Assuming doctor's name is stored in session
+$message='';
 
 // Handle appointment acceptance
 if (isset($_GET['accept'])) {
@@ -32,10 +33,13 @@ if (isset($_GET['accept'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'care@softsmiledentalcentre.in'; // Your Gmail address
+                $mail->Username = 'softsmiledentalcentre0@gmail.com'; // Your Gmail address
                 $mail->Password = 'pczi pmzr rklm jluv'; // Your Gmail app-specific password
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
+
+                // Debug output
+                $mail->SMTPDebug = 2; // Enable verbose debug output
 
                 // Recipients
                 $mail->setFrom('care@softsmiledentalcentre.in', 'SoftSmileDentalCentre');
@@ -63,7 +67,11 @@ if (isset($_GET['accept'])) {
 // Fetch all appointments with status 0
 $sql = "SELECT * FROM patient WHERE status = 0";
 $result = $conn->query($sql);
+
+// Display the message
+echo $message;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
