@@ -38,8 +38,7 @@ if (isset($_GET['accept'])) {
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
 
-                // Debug output
-                $mail->SMTPDebug = 2; // Enable verbose debug output
+
 
                 // Recipients
                 $mail->setFrom('care@softsmiledentalcentre.in', 'SoftSmileDentalCentre');
