@@ -32,13 +32,13 @@ if (isset($_GET['accept'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'your_email@gmail.com'; // Your Gmail address
-                $mail->Password = 'your_app_specific_password'; // Your Gmail app-specific password
+                $mail->Username = 'care@softsmiledentalcentre.in'; // Your Gmail address
+                $mail->Password = 'pczi pmzr rklm jluv'; // Your Gmail app-specific password
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
 
                 // Recipients
-                $mail->setFrom('your_email@gmail.com', 'SoftSmileDentalCentre');
+                $mail->setFrom('care@softsmiledentalcentre.in', 'SoftSmileDentalCentre');
                 $mail->addAddress($patient_email);
 
                 // Content

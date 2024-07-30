@@ -294,7 +294,7 @@
                                     <span class="flaticon-church"></span>
                                 </div>
                                 <div class="text-box">
-                                    <!--h3>Laser Procedure</h3>
+                                    <h3>Laser Procedure</h3>
                                     <p>There anyone who loves or pursues or to obtain pain of itself, because it is but because occasionally.</p>
                                 </div-->
                             </div>
