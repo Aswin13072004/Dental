@@ -183,7 +183,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h3>softsmiledentalcentre@ssdc.in</h3>
+                                <h3>care@softsmiledentalcentre.in</h3>
                             </div>
                         </li>
                         </div>
@@ -271,7 +271,7 @@
                             <br>If you're interested in joining our team at Soft Smile Dental Centre, we encourage you to explore our current employment opportunities and submit your application online. We welcome candidates from diverse backgrounds and experience levels who share our passion for dentistry and dedication to patient care.
                             <br>
                             <br><b>Contact Us:</b>
-                            <br>For more information about employment opportunities or to inquire about a specific position, please contact our HR department at Email:- <a href="mailto: softdentalcare@gmail">softsmiledentalcentre@ssdc.in</a>  or Ph:- <a href="tel: +91 78239 49383">78239 49383</a>. We look forward to hearing from you and discussing how you can become part of our team at Soft Smile Dental Centre.
+                            <br>For more information about employment opportunities or to inquire about a specific position, please contact our HR department at Email:- <a href="mailto: softdentalcare@gmail">care@softsmiledentalcentre.in</a>  or Ph:- <a href="tel: +91 78239 49383">78239 49383</a>. We look forward to hearing from you and discussing how you can become part of our team at Soft Smile Dental Centre.
                             Feel free to customize this content to highlight specific employment opportunities available at your dental care establishment and provide contact information for interested individuals to reach out.</p>
                     </div>
                     <div class="img-box">
@@ -410,7 +410,7 @@
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>softsmiledentalcentre@ssdc.in</h5>
+                                        <h5>care@softsmiledentalcentre.in</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -497,7 +497,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h5>softsmiledentalcentre@ssdc.in</h5>
+                                <h5>care@softsmiledentalcentre.in</h5>
                             </div>
                         </li>
                         <li>

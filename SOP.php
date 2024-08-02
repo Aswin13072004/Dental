@@ -19,11 +19,7 @@
     <link rel="manifest" href="images/favicon/site.webmanifest">
     <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <!-- Fixing Internet Explorer-->
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="js/html5shiv.js"></script>
-    <![endif]-->
+
     
 </head>
 <body>
@@ -183,7 +179,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h3>softsmiledentalcentre@ssdc.in</h3>
+                                <h3>care@softsmiledentalcentre.in</h3>
                             </div>
                         </li>
                         </div>
@@ -423,7 +419,7 @@
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>softsmiledentalcentre@ssdc.in</h5>
+                                        <h5>care@softsmiledentalcentre.in</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -510,7 +506,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h5>softsmiledentalcentre@ssdc.in</h5>
+                                <h5>care@softsmiledentalcentre.in</h5>
                             </div>
                         </li>
                         <li>

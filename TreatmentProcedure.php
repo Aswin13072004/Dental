@@ -183,7 +183,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h3>softsmiledentalcentre@ssdc.in</h3>
+                                <h3>care@softsmiledentalcentre.in</h3>
                             </div>
                         </li>
                         </div>
@@ -442,7 +442,7 @@
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>softsmiledentalcentre@ssdc.in</h5>
+                                        <h5>care@softsmiledentalcentre.in</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -526,7 +526,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h5>softsmiledentalcentre@ssdc.in</h5>
+                                <h5>care@softsmiledentalcentre.in</h5>
                             </div>
                         </li>
                         <li>

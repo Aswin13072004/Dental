@@ -141,7 +141,7 @@
                                     <li class="current"><a href="index.php">Home</a></li>
                                     <li ><a href="about.php">About Us</a></li>
                                     <!-- <li><a href="appointment.php">Appointment</a></li> -->
-                                    <li class="dropdown current"><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
+                                    <li class="dropdown"><a href="Software.php">Partner <br class="NavbarBreakPoint">clinics</a>
                                         <ul>
                                             <li><a href="Software.php">Common software</a></li>
                                             <li><a href="PhoneNumber.php">Common Phone Number-Toll free number</a></li>
@@ -251,7 +251,7 @@
                                     <span class="flaticon-interface"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h3>softsmiledentalcentre@ssdc.in</h3>
+                                    <h3>care@softsmiledentalcentre.in</h3>
                                 </div>
                             </li>
                             </div>
@@ -866,11 +866,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Dr. P. Praveena</h3>
@@ -910,11 +906,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                               
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Dr. Ilakkia</h3>
@@ -932,11 +924,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                               
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Mrs. J. Radha Salomi</h3>
@@ -954,11 +942,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                             
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Mrs. Parimala</h3>
@@ -974,58 +958,6 @@
             </div>
         </div>
     </section>
-    <!--End team area-->
-
-    <!--Start newsletter area-->
-    <!--section class="newsletter-area" style="background-image:url(images/resources/newsletter-bg.jpg);">
-        <div class="container">
-            <div class="sec-title center text-center">
-                <h1>Subscribe for Offers, Coupons and Deals</h1>
-                <p>We list all these discount coupons, deals and offers on various treatments. Get the latest and up-to-date coupons & cashback offers</p>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="newsletter">
-                        <form class="newsletter-form">
-                            <div class="row">
-                                <div class="col-md-3">   
-                                    <div class="field-input">
-                                        <input type="text" name="form_name" value="" placeholder="Your Name" required="">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">   
-                                    <div class="field-input">
-                                        <input type="email" name="form_email" value="" placeholder="Email Address" required="">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">   
-                                    <div class="field-input">
-                                        <input type="text" name="form_phn" value="" placeholder="Ph Num" required="">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <button class="#" type="submit">Subscibe Us</button>
-                                </div>
-                            </div>
-                        </form>    
-                    </div>    
-                </div>
-            </div>
-        </div>
-    </section>     
-    <!--End newsletter area-->  
-
-<!--     
-    <section>
-            <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <a href="index.php"><img  src="images/logo-255x50.png" width="210"  alt="Soft Smile Dental Centre logo Image"></a>
-                </div>
-            </div>
-    </section> -->
-    <!--End Brand area-->        
-
-
 
     <!--Start footer area-->  
     <footer class="footer-area">
@@ -1087,7 +1019,7 @@
                                     <span class="flaticon-interface"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h5>softsmiledentalcentre@ssdc.in</h5>
+                                    <h5>care@softsmiledentalcentre.in</h5>
                                 </div>
                             </li>
                             <li>

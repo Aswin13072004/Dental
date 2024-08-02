@@ -183,7 +183,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h3>softsmiledentalcentre@ssdc.in</h3>
+                                <h3>care@softsmiledentalcentre.in</h3>
                             </div>
                         </li>
                         </div>
@@ -237,7 +237,6 @@
             <div class="col-md-6">
                 <div class="img-holder">
                     <img src="PageImages/AboutUs/img 1 - cropped.jpg" alt="Awesome Image">
-                    <!-- <img src="images/about/about-page-img.jpg" alt="Awesome Image"> -->
                 </div>    
             </div>
             <div class="col-md-6">
@@ -257,58 +256,6 @@
                 </div>
             </div>
         </div>
-        <!--div class="row">
-            <div class="col-md-12">
-                <span class="hr-border"></span>
-            </div>
-        </div>
-        <div class="row bottom">
-           
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="single-item">
-                            <div class="img-holder">
-                                <img src="images/about/mission.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="single-item">
-                            <div class="text-holder martop30">
-                                <h3>Our Mission</h3>
-                                <p>Our mission is to offer to our patients the finest dental care in mid Missouri & provide exceptional, prompt customer service.</p>
-                                <a class="readmore" href="#">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="single-item martop40">
-                            <div class="img-holder">
-                                <img src="images/about/vision.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="single-item">
-                            <div class="text-holder martop30">
-                                <h3>Our Vision</h3>
-                                <p>It is our vision to exceed our patients’ expectations in every way possible. We will succeed by providing the best quality dental care complemented.</p>
-                                <a class="readmore" href="#">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-<!--End about us area-->
 
 <!--Start services area-->
 <section class="services-area">
@@ -356,59 +303,6 @@
         </div>
     </div>
 </section>
-<!--End services area-->
-
-<!--Start fact counter area-->
-<!--section class="fact-counter-area" style="background-image:url(images/resources/fact-counter-bg.jpg);">
-    <div class="container">
-        <div class="sec-title text-center">
-            <h1>Our Achivements</h1>
-            <p>How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great.</p>
-        </div>
-        <div class="row">
-            <!--Start single item>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <ul>
-                    <li>
-                        <div class="single-item text-center">
-                            <div class="icon-holder">
-                                <span class="flaticon-medical-3"></span> 
-                            </div>
-                            <h1><span class="timer" data-from="1" data-to="25" data-speed="5000" data-refresh-interval="50">25</span></h1>
-                            <h3>Years of Experience</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-item text-center">
-                            <div class="icon-holder">
-                                <span class="flaticon-medical-7"></span> 
-                            </div>
-                            <h1><span class="timer" data-from="1" data-to="176" data-speed="5000" data-refresh-interval="50">176</span></h1>
-                            <h3>Cavities Fixed</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-item text-center">
-                            <div class="icon-holder">
-                                <span class="flaticon-smile"></span> 
-                            </div>
-                            <h1><span class="timer" data-from="1" data-to="284" data-speed="5000" data-refresh-interval="50">284</span></h1>
-                            <h3>Well Smiley Faces</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-item text-center">
-                            <div class="icon-holder">
-                                <span class="flaticon-ribbon"></span> 
-                            </div>
-                            <h1><span class="timer" data-from="1" data-to="142" data-speed="5000" data-refresh-interval="50">142</span></h1>
-                            <h3>Awards Holded</h3>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!--End single item-->
-     
         </div>
     </div>
 </section>
@@ -433,11 +327,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                               
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Dr. N. Elangovan</h3>
@@ -457,11 +347,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                             
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Dr. T. Srinivasan</h3>
@@ -481,11 +367,7 @@
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                               
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Mr. N. Elavarasan</h3>
@@ -499,17 +381,12 @@
                         <!--Start single team member-->
                                                 <div class="single-team-member">
                             <div class="img-holder">
-                                <!-- <img src="PageImages/Dentist/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpeg" alt="Awesome Image"> -->
                                 <div class="overlay-one">
                                     <div class="overlay-inner">
                                         <div class="content"></div>
                                     </div>
                                 </div>
-                                <!--ul class="member-social-info">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul-->
+                               
                             </div>
                             <div class="text-holder text-center">
                                 <h3>Dr. G. Satheesh</h3>
@@ -698,7 +575,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h5>softsmiledentalcentre@ssdc.in</h5>
+                                <h5>care@softsmiledentalcentre.in</h5>
                             </div>
                         </li>
                         <li>

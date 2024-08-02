@@ -372,7 +372,7 @@
                                 <span class="flaticon-interface"></span>
                             </div>
                             <div class="text-holder">
-                                <h5>softsmiledentalcentre@ssdc.in</h5>
+                                <h5>care@softsmiledentalcentre.in</h5>
                             </div>
                         </li>
                         <li>
