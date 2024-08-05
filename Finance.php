@@ -160,51 +160,157 @@
 </section>
 <!--End mainmenu area-->     
  
-<!--Start header area-->
-<header class="mainmenu-bottom-area">
+<!-- Start sidebar area -->
+<aside class="sidebar-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="header-contact-info">
-                    <ul>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-signs"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>Avadi, Chennai</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-interface"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>care@softsmiledentalcentre.in</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                       <li>
-                                <div class="iocn-holder">
-                                    <span class="flaticon-clock"></span>
-                                </div>
-                                <div class="text-holder">
-                                    <h3>Weekdays: 09.00am to 2.00pm and   <br>
-                                         &emsp; &emsp; &emsp; &emsp;   04.30pm to 08.00pm</h3>
-                                </div>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <span class="flaticon-menu"></span>
+        </button>
+        <div class="sidebar-contact-info">
+            <ul>
+                <li id="location-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-signs icon" style="color: white;"></span>
+                        <span class="icon-text" style="color:white;"> Avadi, Chennai</span>
+                    </div>
+                </li>
+                <li id="email-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-interface icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> care@softsmiledentalcentre.in</span>
+                    </div>
+                </li>
+                <li id="hours-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-clock icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> Weekdays: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09.00am to 2.00pm<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.30pm to 08.00pm</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</header>  
-<!--End header area--> 
+</aside>
+<!-- End sidebar area -->
+<style>
+    /* Sidebar styling */
+.sidebar-area {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 270px; /* Full width for desktop view */
+    background-color: #2c4ca5; /* Background color for the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    border-left: 1px solid #ddd; /* Optional border */
+    z-index: 1000; /* Ensures the sidebar is on top of other content */
+    transition: width 0.3s; /* Smooth transition for expanding/collapsing */
+}
+
+.sidebar-toggle {
+    display: none !important; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #ddd; /* Icon color for the toggle button */
+    z-index: 1100; /* Ensure toggle button is above other content */
+}
+
+.sidebar-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info .sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer; /* Change cursor to indicate clickable item */
+}
+
+.icon-holder {
+    margin-right: 10px;
+}
+
+.icon {
+    color: #fff !important; /* Color for the icons */
+}
+
+/* Ensure text color is white and visible */
+.sidebar-content-item h3 {
+    color: white !important; /* Force white color for text */
+}
+
+/* Hide the text content by default */
+.sidebar-content-item {
+    display: none;
+    z-index: 1000; /* Ensure content is above other elements */
+}
+
+/* Show the active content */
+.sidebar-content-item.active {
+    display: block !important; /* Force display when active */
+}
+
+/* Mobile view styling */
+@media (max-width: 768px) {
+    .sidebar-area {
+        width: 70px; /* Width for the icon-only view */
+        height: 230px;
+        overflow-y: hidden; /* Hide overflow to prevent scrolling */
+    }
+    
+    .sidebar-contact-info .sidebar-item {
+        display: flex; /* Show icons on mobile */
+    }
+    
+    .sidebar-content-item {
+        display: none; /* Hide content initially */
+    }
+    
+    .sidebar-area.expanded {
+        width: 250px; /* Expanded width for mobile */
+        overflow-y: auto; /* Allow scrolling when expanded */
+    }
+
+    .sidebar-toggle {
+        display: block !important; /* Show the toggle button */
+    }
+
+    /* Hide text in icons for mobile view */
+    .icon-text {
+        display: none; /* Hide text for icons */
+    }
+
+    /* Show text when sidebar is expanded */
+    .sidebar-area.expanded .icon-text {
+        display: inline; /* Show text for icons when expanded */
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarArea = document.querySelector('.sidebar-area');
+    
+    // Toggle sidebar expand/collapse on mobile
+    sidebarToggle.addEventListener('click', function() {
+        sidebarArea.classList.toggle('expanded');
+    });
+});
+
+</script> 
 
 <!--Start breadcrumb area-->     
 <section class="breadcrumb-area" style="background-image: url(./images/Finance/FinanceCropped.png);">
@@ -233,7 +339,8 @@
 
 
 <!--Start service single area-->
-<section id="service-single-area">
+<section id="service-single-area" style="color:black;">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right"> 
@@ -244,13 +351,27 @@
                         <span class="border"></span>
                     </div>
                     <div class="text-box">
-                        <p>➢ Cash flow
-                           <br> ➢ Cash reserve
-                           <br> ➢ Working capital
-                            <br>➢ Spending for investment
-                            <br>➢ Profit sharing
-                           <br> ➢ Emergency Fund</p>    
-                    </div>
+    <p>
+        <strong>➢ Cash Flow:</strong><br>
+        Cash flow refers to the movement of money into and out of a business. It is crucial for maintaining the day-to-day operations and ensuring that there is enough liquidity to meet financial obligations. Effective cash flow management involves monitoring and forecasting to ensure that inflows and outflows are balanced. Positive cash flow indicates that a business can cover its expenses and invest in growth opportunities. Regular analysis helps in identifying trends and potential issues early on.<br><br>
+
+        <strong>➢ Cash Reserve:</strong><br>
+        A cash reserve is a fund set aside to cover unexpected expenses or financial challenges. Maintaining an adequate cash reserve provides a safety net and ensures that the business can remain operational during periods of financial strain. It is important to regularly assess and adjust the reserve amount based on the business’s needs and risks. Having a cash reserve helps in managing cash flow fluctuations and provides peace of mind for both management and stakeholders. Proper planning and budgeting contribute to building and sustaining an effective cash reserve.<br><br>
+
+        <strong>➢ Working Capital:</strong><br>
+        Working capital is the difference between a company's current assets and current liabilities. It measures a business's ability to cover its short-term obligations with its short-term assets. Adequate working capital is essential for smooth operations and financial stability. Effective management involves optimizing inventory levels, accounts receivable, and accounts payable. Regularly monitoring working capital helps in identifying potential liquidity issues and ensuring that the business can sustain its operational activities.<br><br>
+
+        <strong>➢ Spending for Investment:</strong><br>
+        Spending for investment involves allocating funds towards projects or assets that are expected to generate future returns. This includes investments in new technology, infrastructure, or research and development. Careful evaluation of investment opportunities and their potential impact on growth is essential. Prioritizing investments that align with strategic goals can drive long-term success. Monitoring and assessing the performance of investments helps in making informed decisions and optimizing resource allocation.<br><br>
+
+        <strong>➢ Profit Sharing:</strong><br>
+        Profit sharing is a strategy where a portion of a company's profits is distributed to employees or stakeholders. This can serve as an incentive for performance and align interests with company goals. Implementing a profit-sharing plan involves defining criteria for distribution and ensuring transparency. It is important to communicate the benefits and structure clearly to participants. Profit sharing can boost morale, improve retention, and foster a sense of ownership among employees.<br><br>
+
+        <strong>➢ Emergency Fund:</strong><br>
+        An emergency fund is a reserve of cash set aside to cover unforeseen expenses or financial emergencies. It is crucial for maintaining financial stability and providing a buffer against unexpected disruptions. Building an emergency fund involves setting aside a portion of profits regularly and ensuring easy access to the funds when needed. Properly managing the emergency fund helps in mitigating risks and maintaining business continuity. Regular reviews and adjustments ensure that the fund remains adequate and effective.
+    </p>
+</div>
+
                     <div class="img-box">
                         <div class="row">
                             <!--Start single item-->
@@ -650,7 +771,7 @@
 <script src="js/isotope.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script> 
 <!-- jQuery timepicker js -->
-<script src="assets/timepicker/timePicker.js"></script>
+
 <!-- Bootstrap select picker js -->
 <script src="assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
 

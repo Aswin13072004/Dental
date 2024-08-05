@@ -159,51 +159,157 @@
 </section>
 <!--End mainmenu area-->     
  
-<!--Start header area-->
-<header class="mainmenu-bottom-area">
+<!-- Start sidebar area -->
+<aside class="sidebar-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="header-contact-info">
-                    <ul>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-signs"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>Avadi, Chennai</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-interface"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>care@softsmiledentalcentre.in</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                       <li>
-                                <div class="iocn-holder">
-                                    <span class="flaticon-clock"></span>
-                                </div>
-                                <div class="text-holder">
-                                    <h3>Weekdays: 09.00am to 2.00pm and   <br>
-                                         &emsp; &emsp; &emsp; &emsp;   04.30pm to 08.00pm</h3>
-                                </div>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <span class="flaticon-menu"></span>
+        </button>
+        <div class="sidebar-contact-info">
+            <ul>
+                <li id="location-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-signs icon" style="color: white;"></span>
+                        <span class="icon-text" style="color:white;"> Avadi, Chennai</span>
+                    </div>
+                </li>
+                <li id="email-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-interface icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> care@softsmiledentalcentre.in</span>
+                    </div>
+                </li>
+                <li id="hours-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-clock icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> Weekdays: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09.00am to 2.00pm<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.30pm to 08.00pm</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</header>  
-<!--End header area--> 
+</aside>
+<!-- End sidebar area -->
+<style>
+    /* Sidebar styling */
+.sidebar-area {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 270px; /* Full width for desktop view */
+    background-color: #2c4ca5; /* Background color for the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    border-left: 1px solid #ddd; /* Optional border */
+    z-index: 1000; /* Ensures the sidebar is on top of other content */
+    transition: width 0.3s; /* Smooth transition for expanding/collapsing */
+}
+
+.sidebar-toggle {
+    display: none !important; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #ddd; /* Icon color for the toggle button */
+    z-index: 1100; /* Ensure toggle button is above other content */
+}
+
+.sidebar-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info .sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer; /* Change cursor to indicate clickable item */
+}
+
+.icon-holder {
+    margin-right: 10px;
+}
+
+.icon {
+    color: #fff !important; /* Color for the icons */
+}
+
+/* Ensure text color is white and visible */
+.sidebar-content-item h3 {
+    color: white !important; /* Force white color for text */
+}
+
+/* Hide the text content by default */
+.sidebar-content-item {
+    display: none;
+    z-index: 1000; /* Ensure content is above other elements */
+}
+
+/* Show the active content */
+.sidebar-content-item.active {
+    display: block !important; /* Force display when active */
+}
+
+/* Mobile view styling */
+@media (max-width: 768px) {
+    .sidebar-area {
+        width: 70px; /* Width for the icon-only view */
+        height: 230px;
+        overflow-y: hidden; /* Hide overflow to prevent scrolling */
+    }
+    
+    .sidebar-contact-info .sidebar-item {
+        display: flex; /* Show icons on mobile */
+    }
+    
+    .sidebar-content-item {
+        display: none; /* Hide content initially */
+    }
+    
+    .sidebar-area.expanded {
+        width: 250px; /* Expanded width for mobile */
+        overflow-y: auto; /* Allow scrolling when expanded */
+    }
+
+    .sidebar-toggle {
+        display: block !important; /* Show the toggle button */
+    }
+
+    /* Hide text in icons for mobile view */
+    .icon-text {
+        display: none; /* Hide text for icons */
+    }
+
+    /* Show text when sidebar is expanded */
+    .sidebar-area.expanded .icon-text {
+        display: inline; /* Show text for icons when expanded */
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarArea = document.querySelector('.sidebar-area');
+    
+    // Toggle sidebar expand/collapse on mobile
+    sidebarToggle.addEventListener('click', function() {
+        sidebarArea.classList.toggle('expanded');
+    });
+});
+
+</script> 
 
 <!--Start breadcrumb area-->     
 <section class="breadcrumb-area" style="background-image: url(./images/ResearchandDevlopment/ResearchAndDevelopmentCropped.png);">
@@ -233,7 +339,8 @@
 
 
 <!--Start service single area-->
-<section id="service-single-area">
+<section id="service-single-area" style="color:black;">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right"> 
@@ -244,15 +351,33 @@
                         <span class="border"></span>
                     </div>
                     <div class="text-box">
-                        <p>➢ Venture for new ideas
-                           <br> ➢ Initiate trials
-                            <br>➢ Explore possibilities
-                            <br>➢ Widen business
-                            <br>➢ Solve problems
-                           <br> ➢ Conduct fellowship programmes
-                            <br>➢ Plan programme material for short term & long term courses
-                            <br>➢ Plan for Dental Mechanic & hygienist courses</p>    
-                    </div>
+    <p>
+        <strong>➢ Venture for New Ideas:</strong><br>
+        This involves actively seeking out and exploring innovative concepts and solutions. Encouraging creativity and thinking outside the box can lead to groundbreaking developments. Collaboration with diverse teams and staying informed about industry trends are crucial. Investing in research and development helps in identifying and nurturing new ideas. Testing and refining these ideas can lead to successful implementation and competitive advantage.<br><br>
+
+        <strong>➢ Initiate Trials:</strong><br>
+        Conducting trials involves testing new products, services, or processes to evaluate their effectiveness and feasibility. This includes setting up pilot projects or beta tests to gather real-world feedback and identify potential issues. Data collected during trials provides valuable insights for making informed decisions. It is essential to monitor and analyze results thoroughly to make necessary adjustments. Successful trials can lead to broader implementation and scaling.<br><br>
+
+        <strong>➢ Explore Possibilities:</strong><br>
+        Exploring possibilities entails investigating various opportunities for growth and development. This includes assessing market trends, technological advancements, and potential partnerships. Analyzing different scenarios and their potential impacts helps in making strategic decisions. Keeping an open mind and being adaptable allows for discovering new avenues. Thorough research and feasibility studies are important to evaluate the viability of these possibilities.<br><br>
+
+        <strong>➢ Widen Business:</strong><br>
+        Expanding a business involves increasing its reach and scaling operations. This can be achieved through entering new markets, diversifying product lines, or forming strategic alliances. Effective marketing strategies and customer engagement are key to attracting new clientele. Assessing and addressing operational challenges helps manage growth effectively. Continuous evaluation and adaptation are essential to sustaining expansion and achieving long-term success.<br><br>
+
+        <strong>➢ Solve Problems:</strong><br>
+        Problem-solving involves identifying and addressing issues that may hinder progress or efficiency. This requires analyzing the root causes, developing potential solutions, and implementing effective strategies. Regular feedback and monitoring help in refining solutions and preventing recurring problems. Encouraging a problem-solving mindset within the team fosters innovation and resilience. Effective communication and collaboration are crucial in finding and executing solutions.<br><br>
+
+        <strong>➢ Conduct Fellowship Programmes:</strong><br>
+        Fellowship programmes aim to provide support and opportunities for professional development and research. These programs offer resources, mentorship, and financial assistance to individuals pursuing specific goals or projects. Organizing and managing these programmes involves defining objectives, selecting candidates, and providing ongoing support. Evaluation of programme outcomes helps in assessing effectiveness and making improvements. Fellowship programmes contribute to advancing knowledge and fostering talent.<br><br>
+
+        <strong>➢ Plan Programme Material for Short-Term & Long-Term Courses:</strong><br>
+        Developing curriculum and materials for both short-term and long-term courses involves outlining course objectives, content, and assessment methods. This includes creating lesson plans, instructional materials, and resources tailored to the needs of the learners. Ensuring that the content is engaging and up-to-date is crucial for effective learning. Regular updates and evaluations of the programme materials help maintain relevance and quality. Collaboration with subject matter experts enhances the comprehensiveness of the courses.<br><br>
+
+        <strong>➢ Plan for Dental Mechanic & Hygienist Courses:</strong><br>
+        Planning courses for dental mechanics and hygienists involves designing specialized training programs that cover essential skills and knowledge. This includes developing course content, practical exercises, and assessment methods specific to the dental field. Ensuring accreditation and compliance with industry standards is important for the credibility of the courses. Collaboration with dental professionals and institutions helps in creating relevant and effective training materials. Continuous review and adaptation of the curriculum ensure it meets the evolving needs of the profession.
+    </p>
+</div>
+
                     <div class="img-box">
                         <div class="row">
                             <!--Start single item-->
@@ -655,7 +780,7 @@
 <script src="js/isotope.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script> 
 <!-- jQuery timepicker js -->
-<script src="assets/timepicker/timePicker.js"></script>
+
 <!-- Bootstrap select picker js -->
 <script src="assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
 

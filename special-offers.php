@@ -159,45 +159,157 @@
 </section>
 <!--End mainmenu area-->
 
-<!--Start header area-->
-<header class="mainmenu-bottom-area">
+<!-- Start sidebar area -->
+<aside class="sidebar-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="header-contact-info">
-                    <ul>
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-signs"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>45 West Dental Street, Newyork 1003</h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-interface"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>Supportuteam@Dentalcare.com</h3>
-                            </div>
-                        </li>
-                       <li>
-                                <div class="iocn-holder">
-                                    <span class="flaticon-clock"></span>
-                                </div>
-                                <div class="text-holder">
-                                    <h3>Weekdays: 09.00am to 2.00pm and   <br>
-                                         &emsp; &emsp; &emsp; &emsp;   04.30pm to 08.00pm</h3>
-                                </div>
-                            </li>
-                    </ul>
-                </div>
-            </div>
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <span class="flaticon-menu"></span>
+        </button>
+        <div class="sidebar-contact-info">
+            <ul>
+                <li id="location-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-signs icon" style="color: white;"></span>
+                        <span class="icon-text" style="color:white;"> Avadi, Chennai</span>
+                    </div>
+                </li>
+                <li id="email-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-interface icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> care@softsmiledentalcentre.in</span>
+                    </div>
+                </li>
+                <li id="hours-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-clock icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> Weekdays: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09.00am to 2.00pm<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.30pm to 08.00pm</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</header>  
-<!--End header area-->    
+</aside>
+<!-- End sidebar area -->
+<style>
+    /* Sidebar styling */
+.sidebar-area {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 270px; /* Full width for desktop view */
+    background-color: #2c4ca5; /* Background color for the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    border-left: 1px solid #ddd; /* Optional border */
+    z-index: 1000; /* Ensures the sidebar is on top of other content */
+    transition: width 0.3s; /* Smooth transition for expanding/collapsing */
+}
+
+.sidebar-toggle {
+    display: none !important; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #ddd; /* Icon color for the toggle button */
+    z-index: 1100; /* Ensure toggle button is above other content */
+}
+
+.sidebar-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info .sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer; /* Change cursor to indicate clickable item */
+}
+
+.icon-holder {
+    margin-right: 10px;
+}
+
+.icon {
+    color: #fff !important; /* Color for the icons */
+}
+
+/* Ensure text color is white and visible */
+.sidebar-content-item h3 {
+    color: white !important; /* Force white color for text */
+}
+
+/* Hide the text content by default */
+.sidebar-content-item {
+    display: none;
+    z-index: 1000; /* Ensure content is above other elements */
+}
+
+/* Show the active content */
+.sidebar-content-item.active {
+    display: block !important; /* Force display when active */
+}
+
+/* Mobile view styling */
+@media (max-width: 768px) {
+    .sidebar-area {
+        width: 70px; /* Width for the icon-only view */
+        height: 230px;
+        overflow-y: hidden; /* Hide overflow to prevent scrolling */
+    }
+    
+    .sidebar-contact-info .sidebar-item {
+        display: flex; /* Show icons on mobile */
+    }
+    
+    .sidebar-content-item {
+        display: none; /* Hide content initially */
+    }
+    
+    .sidebar-area.expanded {
+        width: 250px; /* Expanded width for mobile */
+        overflow-y: auto; /* Allow scrolling when expanded */
+    }
+
+    .sidebar-toggle {
+        display: block !important; /* Show the toggle button */
+    }
+
+    /* Hide text in icons for mobile view */
+    .icon-text {
+        display: none; /* Hide text for icons */
+    }
+
+    /* Show text when sidebar is expanded */
+    .sidebar-area.expanded .icon-text {
+        display: inline; /* Show text for icons when expanded */
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarArea = document.querySelector('.sidebar-area');
+    
+    // Toggle sidebar expand/collapse on mobile
+    sidebarToggle.addEventListener('click', function() {
+        sidebarArea.classList.toggle('expanded');
+    });
+});
+
+</script>   
 
 <!--Start breadcrumb area-->     
 <section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
@@ -543,7 +655,7 @@
 <script src="js/isotope.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script> 
 <!-- jQuery timepicker js -->
-<script src="assets/timepicker/timePicker.js"></script>
+
 <!-- Bootstrap select picker js -->
 <script src="assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
 

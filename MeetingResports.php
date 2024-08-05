@@ -159,51 +159,157 @@
 </section>
 <!--End mainmenu area-->     
  
-<!--Start header area-->
-<header class="mainmenu-bottom-area">
+<!-- Start sidebar area -->
+<aside class="sidebar-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="header-contact-info">
-                    <ul>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-signs"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>Avadi, Chennai</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                        <li>
-                            <div class="iocn-holder">
-                                <span class="flaticon-interface"></span>
-                            </div>
-                            <div class="text-holder">
-                                <h3>care@softsmiledentalcentre.in</h3>
-                            </div>
-                        </li>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                       <li>
-                                <div class="iocn-holder">
-                                    <span class="flaticon-clock"></span>
-                                </div>
-                                <div class="text-holder">
-                                    <h3>Weekdays: 09.00am to 2.00pm and   <br>
-                                         &emsp; &emsp; &emsp; &emsp;   04.30pm to 08.00pm</h3>
-                                </div>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <span class="flaticon-menu"></span>
+        </button>
+        <div class="sidebar-contact-info">
+            <ul>
+                <li id="location-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-signs icon" style="color: white;"></span>
+                        <span class="icon-text" style="color:white;"> Avadi, Chennai</span>
+                    </div>
+                </li>
+                <li id="email-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-interface icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> care@softsmiledentalcentre.in</span>
+                    </div>
+                </li>
+                <li id="hours-icon" class="sidebar-item">
+                    <div class="icon-holder">
+                        <span class="flaticon-clock icon" style="color: white;"></span>
+                        <span class="icon-text"style="color:white;"> Weekdays: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09.00am to 2.00pm<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.30pm to 08.00pm</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</header>  
-<!--End header area--> 
+</aside>
+<!-- End sidebar area -->
+<style>
+    /* Sidebar styling */
+.sidebar-area {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 270px; /* Full width for desktop view */
+    background-color: #2c4ca5; /* Background color for the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    border-left: 1px solid #ddd; /* Optional border */
+    z-index: 1000; /* Ensures the sidebar is on top of other content */
+    transition: width 0.3s; /* Smooth transition for expanding/collapsing */
+}
+
+.sidebar-toggle {
+    display: none !important; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #ddd; /* Icon color for the toggle button */
+    z-index: 1100; /* Ensure toggle button is above other content */
+}
+
+.sidebar-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-contact-info .sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer; /* Change cursor to indicate clickable item */
+}
+
+.icon-holder {
+    margin-right: 10px;
+}
+
+.icon {
+    color: #fff !important; /* Color for the icons */
+}
+
+/* Ensure text color is white and visible */
+.sidebar-content-item h3 {
+    color: white !important; /* Force white color for text */
+}
+
+/* Hide the text content by default */
+.sidebar-content-item {
+    display: none;
+    z-index: 1000; /* Ensure content is above other elements */
+}
+
+/* Show the active content */
+.sidebar-content-item.active {
+    display: block !important; /* Force display when active */
+}
+
+/* Mobile view styling */
+@media (max-width: 768px) {
+    .sidebar-area {
+        width: 70px; /* Width for the icon-only view */
+        height: 230px;
+        overflow-y: hidden; /* Hide overflow to prevent scrolling */
+    }
+    
+    .sidebar-contact-info .sidebar-item {
+        display: flex; /* Show icons on mobile */
+    }
+    
+    .sidebar-content-item {
+        display: none; /* Hide content initially */
+    }
+    
+    .sidebar-area.expanded {
+        width: 250px; /* Expanded width for mobile */
+        overflow-y: auto; /* Allow scrolling when expanded */
+    }
+
+    .sidebar-toggle {
+        display: block !important; /* Show the toggle button */
+    }
+
+    /* Hide text in icons for mobile view */
+    .icon-text {
+        display: none; /* Hide text for icons */
+    }
+
+    /* Show text when sidebar is expanded */
+    .sidebar-area.expanded .icon-text {
+        display: inline; /* Show text for icons when expanded */
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarArea = document.querySelector('.sidebar-area');
+    
+    // Toggle sidebar expand/collapse on mobile
+    sidebarToggle.addEventListener('click', function() {
+        sidebarArea.classList.toggle('expanded');
+    });
+});
+
+</script> 
 
 <!--Start breadcrumb area-->     
 <section class="breadcrumb-area" style="background-image: url(./images/MeetingandReporting/MeetingsAndReportingsCropped.png);">
@@ -231,7 +337,8 @@
 <!--End breadcrumb area-->  
 
 <!--Start service single area-->
-<section id="service-single-area">
+<section id="service-single-area" style="color:black;">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right"> 
@@ -242,17 +349,36 @@
                         <span class="border"></span>
                     </div>
                     <div class="text-box">
-                        <p>➢ Weekly review meetings
-                            <br>➢ Monthly review meetings
-                            <br>➢ Strategic meetings
-                            <br>➢ Standing meetings-short meetings
-                            <br>➢ Emergency meetings
-                            <br>➢ Daily reporting
-                            <br>➢ Reporting whenever needed
-                            <br>➢ Emergency reporting
-                            <br>➢ Confidential meeting
-                            </p>    
-                    </div>
+    <p>
+        <strong>➢ Weekly Review Meetings:</strong><br>
+        Weekly review meetings are held to assess progress on ongoing projects and address any issues that may arise. These meetings provide a regular opportunity for team members to update each other on their tasks and milestones. They help in tracking the status of deliverables, identifying roadblocks, and planning the upcoming week’s activities. Regular weekly meetings foster communication, accountability, and timely problem-solving. They also facilitate alignment of team efforts with overall objectives.<br><br>
+
+        <strong>➢ Monthly Review Meetings:</strong><br>
+        Monthly review meetings offer a broader perspective on project and departmental performance over the past month. They focus on evaluating the achievement of goals, financial performance, and strategic initiatives. These meetings provide an opportunity for in-depth analysis of results, trend identification, and long-term planning. They are useful for discussing major challenges, successes, and adjustments to strategies. Monthly meetings help in ensuring that activities are aligned with organizational goals and adapting plans as necessary.<br><br>
+
+        <strong>➢ Strategic Meetings:</strong><br>
+        Strategic meetings are focused on long-term goals and overall direction of the organization. These meetings involve senior management and key stakeholders to discuss and plan strategic initiatives, market positioning, and future growth. They often include SWOT analyses (Strengths, Weaknesses, Opportunities, Threats) and review of strategic objectives. Strategic meetings are crucial for setting vision, defining priorities, and ensuring alignment across the organization. They help in making informed decisions and steering the company towards its long-term goals.<br><br>
+
+        <strong>➢ Standing Meetings - Short Meetings:</strong><br>
+        Standing meetings, also known as stand-up meetings, are brief and typically last around 15 minutes. They are designed to quickly update team members on progress, address immediate concerns, and plan the day’s activities. These meetings encourage concise communication and keep participants focused on key issues. The format promotes efficiency and keeps teams aligned without consuming excessive time. They are particularly useful for agile teams and fast-paced environments.<br><br>
+
+        <strong>➢ Emergency Meetings:</strong><br>
+        Emergency meetings are called to address urgent issues or crises that require immediate attention. These meetings are usually ad-hoc and involve key decision-makers who need to respond quickly to unexpected events. The focus is on rapid problem-solving, implementing contingency plans, and coordinating response efforts. Emergency meetings are critical for managing risks and minimizing the impact of emergencies. Effective communication and decisive action during these meetings are essential for resolving crises efficiently.<br><br>
+
+        <strong>➢ Daily Reporting:</strong><br>
+        Daily reporting involves providing updates on daily activities, progress, and any issues encountered. This reporting helps in tracking short-term performance and ensuring that tasks are on schedule. It often includes summarizing key accomplishments, challenges, and plans for the next day. Daily reports facilitate real-time visibility into operations and allow for prompt adjustments if needed. They are useful for maintaining accountability and ensuring that daily objectives are met.<br><br>
+
+        <strong>➢ Reporting Whenever Needed:</strong><br>
+        Reporting whenever needed refers to providing information or updates as required by specific circumstances or stakeholders. This flexible approach ensures that relevant data and insights are available to decision-makers when needed. It involves generating reports on-demand for special requests, project updates, or specific issues. Effective ad-hoc reporting helps in addressing immediate concerns and providing timely information for informed decision-making.<br><br>
+
+        <strong>➢ Emergency Reporting:</strong><br>
+        Emergency reporting involves providing immediate updates and information during a crisis or critical situation. This type of reporting is crucial for keeping stakeholders informed about the status of the emergency, actions taken, and any impact. It requires quick and accurate communication to ensure that all relevant parties are aware of the situation and can coordinate responses effectively. Emergency reporting helps in managing the crisis and making timely decisions to mitigate risks.<br><br>
+
+        <strong>➢ Confidential Meetings:</strong><br>
+        Confidential meetings are held to discuss sensitive or private matters that require discretion. These meetings involve a restricted group of participants and are conducted in a secure environment to protect confidential information. They are essential for handling confidential topics such as personnel issues, strategic decisions, or proprietary information. Ensuring confidentiality helps in maintaining trust and protecting organizational interests. Proper protocols and secure communication channels are crucial for these meetings.
+    </p>
+</div>
+
                     <div class="img-box">
                         <div class="row">
                             <!--Start single item-->
@@ -656,7 +782,7 @@
 <script src="js/isotope.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script> 
 <!-- jQuery timepicker js -->
-<script src="assets/timepicker/timePicker.js"></script>
+
 <!-- Bootstrap select picker js -->
 <script src="assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
 
