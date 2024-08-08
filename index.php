@@ -569,166 +569,7 @@
     </section>
     <!--End welcome area-->
 
-    <!--Start special services area-->
-    <!--<section class="special-services-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="top">
-                        <div class="sec-title pull-left">
-                            <h1>Special Services</h1>
-                            <span class="border"></span>
-                            <div class="text-box">
-                                <h3>Affortable and Quality Dental Care</h3>
-                                <p>How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer.</p>
-                            </div>
-                        </div>
-                        <div class="icon-box pull-right">
-                            <img src="images/services/icon.png" alt="Icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="service-carousel">
-                        <Start single item>
-                        <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
-                            <div class="img-holder">
-                                <img src="images/services/1.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <p>Expound the actual teachings the great explorer of the truth, the master  builder of human happiness with smile.</p>
-                                            <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a>    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <div class="icon">
-                                        <span class="flaticon-medical-2"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="title-holder">
-                                <a href="#"><h3>Root Canel</h3></a>
-                            </div>
-                        </div>
-                        <!--End single item>
-                        <!--Start single item>
-                        <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
-                            <div class="img-holder">
-                                <img src="images/services/2.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <p>Expound the actual teachings the great explorer of the truth, the master  builder of human happiness with smile.</p>
-                                            <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a>    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <div class="icon">
-                                        <span class="flaticon-medical-3"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="title-holder">
-                                <a href="#"><h3>Clips & Braces</h3></a>
-                            </div>
-                        </div>
-                        <!--End single item>
-                        <!--Start single item>
-                        <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
-                            <div class="img-holder">
-                                <img src="images/services/3.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <p>Expound the actual teachings the great explorer of the truth, the master  builder of human happiness with smile.</p>
-                                            <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a>    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <div class="icon">
-                                        <span class="flaticon-medical-4"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="title-holder">
-                                <a href="#"><h3>Dental Implant</h3></a>
-                            </div>
-                        </div>
-                        <!--End single item->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End special services area-->
-
-    <!--Start appoinment area-->
-    <!--section class="appoinment-area" style="background-image:url(images/resources/appoinment-bg.jpg);">
-        <div class="container inner-content">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="img-holder">
-                        <img src="images/resources/appoinment.png" alt="Awesome Image">
-                    </div>    
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="appoinment">
-                        <div class="sec-title">
-                            <h1>Get an appointment</h1>
-                            <span class="border"></span>
-                            <div class="text-box">
-                                <p>We don’t want you to think what is the best for you. We know what it is and will make everything to help.</p>
-                            </div>
-                        </div>
-                        <form class="appoinment-form">
-                            <div class="row">
-                                <div class="col-md-6">   
-                                    <div class="field-input">
-                                        <input type="text" name="form_name" value="" placeholder="Name" required="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">   
-                                    <div class="field-input">
-                                        <input type="text" name="form_phnnumber" value="" placeholder="Ph Num" required="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">   
-                                    <div class="field-input">
-                                        <input type="text" name="date" placeholder="Date" id="datepicker">
-                                        <div class="icon-box">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">   
-                                    <div class="field-input">
-                                        <input type="text" name="time" placeholder="Time">
-                                        <div class="icon-box">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button class="thm-btn bg-1" type="submit">Get an appointment</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End appoinment area-->
+   
 
     <!--Start about us area-->
     <section class="about-us-area">
@@ -1000,6 +841,7 @@
                                     <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 </ul-->
                             </div>
+                            
                             <div class="text-holder text-center">
                                 <h3>Dr. E. Aswin</h3>
                                 <span>General Medical Practitioner</span>
@@ -1026,6 +868,28 @@
                                 <!--a href="#">View Profile<i class="fa fa-angle-right" aria-hidden="true"></i></a-->
                             </div>    
                         </div>
+
+
+
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <div class="overlay-one">
+                                    <div class="overlay-inner">
+                                        <div class="content"></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="text-holder text-center">
+                                <h3>Saravanakumar. S.M.</h3>
+                                <span>Network Administrator</span>
+                                <span class="border"></span>
+                                <!--a href="#">View Profile<i class="fa fa-angle-right" aria-hidden="true"></i></a-->
+                            </div>    
+                        </div>
+
+
+
                         <div class="single-team-member">
                             <div class="img-holder">
                                 <!-- <img src="PageImages/Dentist/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpeg" alt="Awesome Image"> -->
