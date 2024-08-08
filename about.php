@@ -414,6 +414,7 @@
 </section>
 <!--End fact counter area--> 
 <div class="img" style="text-align: center;">
+<h1 style="color:black;"> <strong>Give your valuable feedback</strong></h1> <br>
     <img id="responsive-img" src="images/review.png" alt="Review Image">
 </div>
 
@@ -445,7 +446,6 @@
                         <!--Start single team member-->
                         <div class="single-team-member">
                             <div class="img-holder">
-                                <!-- <img src="PageImages/Dentist/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpeg" alt="Awesome Image"> -->
                                 <div class="overlay-one">
                                     <div class="overlay-inner">
                                         <div class="content"></div>
@@ -503,7 +503,7 @@
                         </div> 
                         <!--End single team member-->
                         <!--Start single team member-->
-                                                <div class="single-team-member">
+                        <div class="single-team-member">
                             <div class="img-holder">
                                 <div class="overlay-one">
                                     <div class="overlay-inner">
@@ -516,6 +516,22 @@
                                 <h3>Dr. G. Satheesh</h3>
                                 <span>Oral & Facio Maxillary Surgeon</span>
                                 <p>Dental Expert</p>
+                                <span class="border"></span>
+                                <!--a href="#">View Profile<i class="fa fa-angle-right" aria-hidden="true"></i></a-->
+                            </div>    
+                        </div>
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <div class="overlay-one">
+                                    <div class="overlay-inner">
+                                        <div class="content"></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="text-holder text-center">
+                                <h3>Saravanakumar. S.M.</h3>
+                                <span>Network Administrator</span>
                                 <span class="border"></span>
                                 <!--a href="#">View Profile<i class="fa fa-angle-right" aria-hidden="true"></i></a-->
                             </div>    

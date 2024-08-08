@@ -760,9 +760,7 @@
 <script src="js/isotope.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script> 
 <!-- jQuery timepicker js -->
-<script src="assets/timepicker/timePicker.js"></script>
-<!-- Bootstrap select picker js -->
-<script src="assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
+                             
 
 
 <!-- revolution slider js -->
